@@ -1,0 +1,31 @@
+public class EuklidModern {
+
+    public static void main( String[] args ){
+        int x = Integer.parseInt("15");
+        int y = Integer.parseInt("35");
+        System.out.println("> java EuclidModern " + x + " " + y);
+
+        System.out.println("| line\t"+ " | x\t" + "| y \t| r \t| comment");
+        if ( x <= 0 || y <= 0)  {
+            System.out.println("nur positive Argumente!!");
+            return;
+        }
+        System.out.println("| M1\t " + "| " + x+ " \t" + "| " + y + " \t" + "| - \t| ggT(" + x + "," + y +")");
+
+        int r;
+        System.out.println("| M2\t " + "| " + x + " \t" + "| " + y + " \t| - \t|  while(" + y + "!= 0)");
+        while ( y != 0 ) {
+
+            r = x % y;
+            System.out.println("| M3\t " + "| " + x + " \t" + "| " + y + " \t| " + r + " \t" + "|   r = " + x + " % " + y);
+            x = y;
+            System.out.println("| M4\t " + "| " + x + " \t" + "| " + y + " \t| " + r + " \t" + "|   x = " + y);
+            y = r;
+            System.out.println("| M5\t " + "| " + x + " \t" + "| " + y + " \t| " + r + " \t" + "|   y = " + r);
+            System.out.println("| M2\t " + "| " + x + " \t" + "| " + y + " \t| " + r +  " \t|  while(" + y + "!= 0)");
+        }
+        System.out.println("| M6\t " + "| " + x+ " \t" + "| " + y+ " \t| - \t| " + "= " + x);
+
+
+    }
+}
