@@ -1,0 +1,24 @@
+/*Aufgabe:
+  Sie haben Ihren Lieblings-Integer vergessen, aber erinnern sich an folgende Eigenschaften:
+  - Die Zahl liegt irgendwo zwischen 1 und 1000.
+  - Die Zahl ist ohne Rest durch 6 teilbar.
+  - Die Zahl ist ohne Rest durch 7 teilbar.
+  - Die Zahl ist nicht ohne Rest durch 4 teilbar.
+  - Die Quersumme der Zahl ist 6.
+  Schreiben Sie eine kleine Java-Simulation um herauszufinden, welches Ihre Lieblingszahl war.*/
+
+public class LieblingsInteger {
+    public static void main(String[] args) {
+        for(int i=1;i<=1000;i++){
+            int quersumme=0;
+            int integer=i;
+            while(integer!=0) {
+                quersumme += integer % 10;
+                integer = integer / 10;
+            }
+            if(i % 6==0 && i % 7==0 && i% 4!=0 && quersumme==6){
+                System.out.println(i);
+            }
+        }
+    }
+}
