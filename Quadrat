@@ -1,0 +1,44 @@
+/* Aufgabe:
+   Bei Eingabe der ganzen Zahl n in der Kommandozeile wird die Summe der ersten ungeraden Zahlen ab 1 berechnet und ausgegeben. 
+   Hinweise
+   • |n| ist der Betrag von n.
+   • Die Summe der ersten |n| ungeraden Zahlen ist n^2.*/
+
+import java.util.Scanner;
+public class Quadrat {
+
+    public static void main(String[] args ){
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Geben Sie eine ganze Zahl ein:");
+
+        int n = scanner.nextInt();
+
+        if (n < 0){
+
+            n = -n;
+
+            System.out.print("Sei n = " + n + ", dann gilt | " + n + " | = " + n + " und " + n + "^2 = ") ;
+
+        }else{
+
+            System.out.print("Sei n = " + n + ", dann gilt | " + n + " | = " + n + " und " + n + "^2 = ") ;
+        }
+
+
+        int ungerade = 1;
+        int summe = 0;
+
+        for (int i = 1 ; i < n ; i++){
+            summe = summe + ungerade;
+
+            System.out.print(ungerade + " + " );
+
+            ungerade = ungerade + 2;
+        }
+
+        summe = summe + ungerade;
+        System.out.print( ungerade + " = " + summe) ;
+
+    }
+}
