@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class iterierteQuersumme {
+
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Geben Sie eine ganze Zahl ein:");
+
+        int num = scanner.nextInt();
+        
+        int n = num;
+        int result = 0;
+
+        while (n > 9) {  // Wenn Quersumme (result) größer als 9 ist, wird die Schleife weiter durchgeührt.
+
+            result = 0;
+
+            while (n > 0) {
+
+                int letzteZiffer = n % 10;
+                result += letzteZiffer;
+                n /= 10;
+
+            }
+
+            n = result;
+
+        }
+
+        System.out.println("Die iterierte Quersumme von " + num + " ist: " + result );
+
+    }
+
+}
